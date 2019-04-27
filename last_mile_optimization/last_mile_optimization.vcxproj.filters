@@ -13,6 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\data">
+      <UniqueIdentifier>{90f06fa4-94f3-472e-bf0d-6c3cec3cd13b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\solvers">
+      <UniqueIdentifier>{f4983da3-7c3e-49d1-a7ab-047942e81f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\solvers\genetic">
+      <UniqueIdentifier>{43fc6a0d-bbf0-4261-901b-f24f0de93b59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scoring">
+      <UniqueIdentifier>{a67c86d7-3b4b-410e-a60c-013e04c92814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\helpers">
+      <UniqueIdentifier>{7e9d0229-556c-4843-b92b-a30877295904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parsing_library">
+      <UniqueIdentifier>{92d856df-5ae6-4289-87b6-f6da75e5c94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\parameters">
+      <UniqueIdentifier>{50af8cc7-feea-43e2-833b-137dd68143a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data\solution_helper">
+      <UniqueIdentifier>{8ec7b30d-e58c-4e6f-8dcc-5b7baf8818d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="last_mile_optimization.cpp">
@@ -23,10 +47,64 @@
     <Text Include="Input_midproject.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="input_mideproject_2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="problem.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="abstract_solver.h">
+      <Filter>Header Files\solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="data_helpers.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="genetic_solver.h">
+      <Filter>Header Files\solvers\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="genetic_solver_helpers.h">
+      <Filter>Header Files\solvers\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="score_functions.h">
+      <Filter>Header Files\scoring</Filter>
+    </ClInclude>
+    <ClInclude Include="solution.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="solvers.h">
+      <Filter>Header Files\solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="simple_random_generator.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="solution_saver.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
     <ClInclude Include="clipp.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\parsing_library</Filter>
+    </ClInclude>
+    <ClInclude Include="parsed_problem.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="genetic_solver_parameters.h">
+      <Filter>Header Files\parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="brute_force_solver_parameters.h">
+      <Filter>Header Files\parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="problem_type_parameters.h">
+      <Filter>Header Files\parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parse_command_line_arguments.h">
+      <Filter>Header Files\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="randomly_combine_solutions.h">
+      <Filter>Header Files\data\solution_helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
