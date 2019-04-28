@@ -10,10 +10,12 @@
 #include "solution_saver.h"
 #include "solvers.h"
 
+parse_cmd::cmd_args arg;
+data::parsed_problem parsed_prob;
+
 template<unsigned int N>
-void solve(const parse_cmd::cmd_args& arg, const data::parsed_problem& parsed_prob) {
+void solve() {
 	if (N != parsed_prob.no_stations) {
-		solve<N - 1>(arg, parsed_prob);
 		return;
 	}
 
@@ -33,19 +35,24 @@ void solve(const parse_cmd::cmd_args& arg, const data::parsed_problem& parsed_pr
 	std::cout << "best_score_found:\t" << solution_saver.get_score() << std::endl;
 }
 
-template<>void solve<0>(const parse_cmd::cmd_args & arg, const data::parsed_problem & parsed_prob) {} // recursion end.
 
-
-constexpr unsigned int MAX_N = 15;
+#define solve_n_1(x,y) solve<x+y>();
+#define solve_n_2(x,y) solve_n_1(x,y) solve_n_1(x,y+1)
+#define solve_n_4(x,y) solve_n_2(x,y) solve_n_1(x,y+2)  
+#define solve_n_8(x,y) solve_n_4(x,y) solve_n_4(x,y+4)  
+#define solve_n_16(x,y) solve_n_8(x,y) solve_n_8(x,y+8)
+#define solve_n_32(x,y) solve_n_16(x,y) solve_n_16(x,y+16)  
+#define solve_n_64(x,y) solve_n_32(x,y) solve_n_32(x,y+32)  
+#define solve_n_128(x,y) solve_n_64(x,y) solve_n_64(x,y+64)  
+#define MAX_N 128
 
 int main(int argc, char* argv[])
 {
-	parse_cmd::cmd_args arg;
 	if (parse_cmd::try_parse_command_line_argument(argc, argv, arg)) {
-		auto parsed_prob = data::parsed_problem::from_file(arg.infile);
+		parsed_prob = data::parsed_problem::from_file(arg.infile);
 		if (parsed_prob.no_stations > MAX_N)
 			throw std::string("Doesn't support more than ") + std::to_string(MAX_N)
 			+ std::string(" station (needs to be recompiled for that...).");
-		solve<MAX_N>(arg, parsed_prob);
+		solve_n_128(1, 0);
 	}
 }
