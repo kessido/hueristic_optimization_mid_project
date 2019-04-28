@@ -36,14 +36,14 @@ void solve() {
 }
 
 
-#define solve_n_1(x,y) solve<x+y>();
-#define solve_n_2(x,y) solve_n_1(x,y) solve_n_1(x,y+1)
-#define solve_n_4(x,y) solve_n_2(x,y) solve_n_1(x,y+2)  
-#define solve_n_8(x,y) solve_n_4(x,y) solve_n_4(x,y+4)  
-#define solve_n_16(x,y) solve_n_8(x,y) solve_n_8(x,y+8)
-#define solve_n_32(x,y) solve_n_16(x,y) solve_n_16(x,y+16)  
-#define solve_n_64(x,y) solve_n_32(x,y) solve_n_32(x,y+32)  
-#define solve_n_128(x,y) solve_n_64(x,y) solve_n_64(x,y+64)  
+#define solve_n_1(x) solve<x>();
+#define solve_n_2(x) solve_n_1(x) solve_n_1(x+1)
+#define solve_n_4(x) solve_n_2(x) solve_n_2(x+2)  
+#define solve_n_8(x) solve_n_4(x) solve_n_4(x+4)  
+#define solve_n_16(x) solve_n_8(x) solve_n_8(x+8)
+#define solve_n_32(x) solve_n_16(x) solve_n_16(x+16)  
+#define solve_n_64(x) solve_n_32(x) solve_n_32(x+32)  
+#define solve_n_128(x) solve_n_64(x) solve_n_64(x+64)  
 #define MAX_N 128
 
 int main(int argc, char* argv[])
@@ -53,6 +53,6 @@ int main(int argc, char* argv[])
 		if (parsed_prob.no_stations > MAX_N)
 			throw std::string("Doesn't support more than ") + std::to_string(MAX_N)
 			+ std::string(" station (needs to be recompiled for that...).");
-		solve_n_128(1, 0);
+		solve_n_128(1);
 	}
 }
