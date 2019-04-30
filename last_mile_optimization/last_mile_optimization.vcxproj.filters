@@ -106,5 +106,8 @@
     <ClInclude Include="randomly_combine_solutions.h">
       <Filter>Header Files\data\solution_helper</Filter>
     </ClInclude>
+    <ClInclude Include="statistics_helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

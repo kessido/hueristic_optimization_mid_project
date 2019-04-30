@@ -12,7 +12,7 @@ namespace parse_cmd {
 	struct cmd_args {
 		string infile = "", outfile = "";
 		string solver_name = "genetic";
-		int runtime = -1;
+		float runtime = -1;
 	};
 
 	bool try_parse_command_line_argument(int argc, char* argv[], cmd_args& cmd) {

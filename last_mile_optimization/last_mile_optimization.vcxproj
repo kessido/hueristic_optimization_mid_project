@@ -191,6 +191,7 @@
     <ClInclude Include="solution.h" />
     <ClInclude Include="solution_saver.h" />
     <ClInclude Include="solvers.h" />
+    <ClInclude Include="statistics_helpers.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

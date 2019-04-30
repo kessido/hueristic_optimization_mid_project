@@ -2,10 +2,18 @@
 #include <algorithm>
 #include <cstring>
 #include "data_helpers.h"
+#include <atomic>
 
 namespace scoring {
+	struct scoring_statistics {
+		static std::atomic<unsigned long long int> number_of_solution_checked;
+	};
+	std::atomic<unsigned long long int> scoring_statistics::number_of_solution_checked = 0;
+
+
 	template<unsigned int N>
 	long long get_score_direct(const unsigned long long current_solution[N][N], const unsigned int demand[N][N]) {
+		scoring_statistics::number_of_solution_checked++;
 		long long res = 0;
 		for (int i = 0; i < N; ++i)
 			for (int j = 0; j < N; ++j)
